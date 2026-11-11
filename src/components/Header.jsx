@@ -1,8 +1,7 @@
-import { useContext } from "react";
 import { NavLink } from "react-router";
 
-import { CityContext } from "../context/CityContext.jsx";
-import { UnitsContext } from "../context/UnitsContext.jsx";
+import { useCity } from "../context/CityContext.jsx";
+import { useUnits } from "../context/UnitsContext.jsx";
 import CityPicker from "./CityPicker.jsx";
 import Clock from "./Clock.jsx";
 import UnitsToggle from "./UnitsToggle.jsx";
@@ -12,8 +11,8 @@ function navClass({ isActive }) {
 }
 
 function Header() {
-  const { city } = useContext(CityContext);
-  const { units } = useContext(UnitsContext);
+  const { city } = useCity();
+  const { units } = useUnits();
 
   return (
     <header className="header">
